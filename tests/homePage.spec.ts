@@ -20,7 +20,7 @@ test.describe("Home Page testing", () => {
         await homePage.navigate();
     });
 
-    test.only("C212 Checking 'Послуги' section on the main page", async({ page, baseURL }) => {
+    test("C212 Checking 'Послуги' section on the main page", async({ page, baseURL }) => {
         const homePage = new HomePage(page);
         const productsPage = new ProductsPage(page);
         const unitPage = new UnitPage(page);
