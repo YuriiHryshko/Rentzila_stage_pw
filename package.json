@@ -1,0 +1,16 @@
+{
+  "name": "rentzila1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.41.1",
+    "@types/node": "^20.11.5",
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.1"
+  }
+}
