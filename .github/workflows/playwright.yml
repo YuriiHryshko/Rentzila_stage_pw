@@ -21,6 +21,8 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
+    - name: Generate Report
+      run: npm run report:create
     - name: Deploy report to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
