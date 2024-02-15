@@ -1,16 +1,22 @@
 {
-  "name": "rentzila1",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@playwright/test": "^1.41.1",
-    "@types/node": "^20.11.5",
-    "axios": "^1.6.7",
-    "dotenv": "^16.4.1"
-  }
+    "name": "rentzila1",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test:all": "npx playwright test",
+        "test:all:headed": "npx playwright test --headed",
+        "report:create": "npx allure generate --clean",
+        "report:open": "npx allure open"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@playwright/test": "^1.41.2",
+        "@types/node": "^20.11.5",
+        "allure-playwright": "^2.12.0",
+        "axios": "^1.6.7",
+        "dotenv": "^16.4.1"
+    }
 }
