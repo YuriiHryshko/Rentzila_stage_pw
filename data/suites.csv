@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Feb 15 08:34:39 UTC 2024","Thu Feb 15 08:36:49 UTC 2024","130391","chromium","homePage.spec.ts","Home Page testing","","","C212 Checking 'Послуги' section on the main page",""
+"passed","Thu Feb 15 08:36:49 UTC 2024","Thu Feb 15 08:37:35 UTC 2024","45475","chromium","homePage.spec.ts","Home Page testing","","","C530 Verify Search Input",""
+"passed","Thu Feb 15 08:36:40 UTC 2024","Thu Feb 15 08:36:46 UTC 2024","5949","chromium","homePage.spec.ts","Home Page testing","","","C214 Verify that all elements on the footer are displayed and all links are clickable",""
+"passed","Thu Feb 15 08:36:46 UTC 2024","Thu Feb 15 08:36:50 UTC 2024","4299","chromium","homePage.spec.ts","Home Page testing","","","C226 Verify 'У Вас залишилися питання?' form",""
+"passed","Thu Feb 15 08:34:39 UTC 2024","Thu Feb 15 08:36:40 UTC 2024","121108","chromium","homePage.spec.ts","Home Page testing","","","C213 Checking 'Спецтехніка' section on the main page",""
+"passed","Thu Feb 15 08:36:50 UTC 2024","Thu Feb 15 08:37:33 UTC 2024","42587","chromium","homePage.spec.ts","Home Page testing","","","C559 Verify 'Каталог'",""
