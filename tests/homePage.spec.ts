@@ -399,6 +399,5 @@ test.describe("Home Page testing", () => {
         await catalog.clickPruningTreesItem();
         await expect(page.url()).toContain('/products/');
         await expect(await productsPage.selectedFilter.textContent()).toBe('Обрізання дерев');
-        //test
     });
 });
