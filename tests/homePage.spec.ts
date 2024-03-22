@@ -10,7 +10,7 @@ import TendersPage from '../pages/tenders.page';
 import testData from '../data/data.json'
 import consultData from '../data/consultationData.json'
 import searchData from '../data/searchData.json'
-import ApiHelper from '../helper/feedback.helper';
+import ApiHelper from '../helper/API.helper';
 import CatalogPage from '../pages/catalogPage';
 import catalogData from '../data/catalogData.json';
 

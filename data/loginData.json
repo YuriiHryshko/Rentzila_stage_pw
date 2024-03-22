@@ -1,0 +1,25 @@
+{
+    "validEmails": ["testuserrentzila@gmail.com", "TESTUSERRENTZILA@GMAIL.COM"],
+    "validPassword": "Testuser10",
+    "validPhones": ["+380506743060", "380506743060", "0506743060"],
+    "invalidEmails": [
+        "testuser rentzila@gmail.com",
+        "еуіегіуккутеяшдф",
+        "testuserrentzilagmail.com",
+        "testuserrentzila@gmailcom",
+        "testuserrentzila@gmail",
+        "testuserrentzila@.com",
+        "testuserrentzila",
+        "testuserrentzila@@gmail.com",
+        "  testuserrentzila@gmail.com",
+        "testuserrentzila@gmail.com  "
+    ],
+    "nonExistentEmails": ["testuserrentzila99@gmail.com", "4444rrentzila99@gmail.com"],
+    "invalidPasswords": [
+        "Testuser10  ",
+        "  Testuser10",
+        "testuser10",
+        "TESTUSER10",
+        "Еуіегіук10"
+    ]
+}

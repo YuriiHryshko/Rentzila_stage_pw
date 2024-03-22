@@ -31,6 +31,31 @@ class HomePage extends BasePage {
     public readonly searchDropdownHistory: Locator;
     public readonly clearSearchInputBtn: Locator;
 
+    public readonly navbarAuthBtn: Locator;
+    public readonly forgotPasswordLink: Locator;
+    public readonly restorePasswordPopup: Locator;
+    public readonly restorePasswordCaptchaContainer: Locator;
+    public readonly restorePasswordRestorePasswordBtn: Locator;
+    public readonly restorePasswordEmailInputError: Locator;
+    public readonly restorePasswordEmailInput: Locator;
+    public readonly restorePasswordCrossBtn: Locator;
+    public readonly restorePasswordPopupError: Locator;
+
+    public readonly loginPopupLoginBtn: Locator;
+    public readonly loginPopup: Locator;
+    public readonly loginPopupEmailInputError: Locator;
+    public readonly loginPopupPasswordInputError: Locator;
+    public readonly loginPopupEmailInput: Locator;
+    public readonly loginPopupPasswordInput: Locator;
+    public readonly loginPopupPasswordInputEyeIcon: Locator;
+    public readonly loginPopupError: Locator;
+
+    public readonly navbarAvatarBlock: Locator;
+    public readonly profileDropdownMenu: Locator;
+    public readonly profileDropdownMenuEmail: Locator;
+    public readonly profileDropdownMenuLogout: Locator;
+    public readonly profileDropdownMenuProfile: Locator;
+
     constructor(page) {
         super(page);
 
@@ -62,6 +87,30 @@ class HomePage extends BasePage {
         this.searchDropdownHistory = page.locator('div.LeftsideSearch_container__XgEkO > div:first-of-type > div');
         this.clearSearchInputBtn = page.locator('div.Navbar_searchWrapper__LN_Qm div[data-testid="searchClear"]');
 
+        this.navbarAuthBtn = page.locator('.NavbarAuthBlock_buttonEnter__c9siH');
+        this.forgotPasswordLink = page.locator('.LoginForm_link__wiXuw:nth-child(2)');
+        this.restorePasswordPopup = page.locator('div[data-testid="restorePasswordPopup"]');
+        this.restorePasswordCaptchaContainer = page.locator('iframe[title="reCAPTCHA"]');
+        this.restorePasswordRestorePasswordBtn = page.locator('form.RestorePasswordPopup_form__jS1V2 button');
+        this.restorePasswordEmailInputError = page.locator('form.RestorePasswordPopup_form__jS1V2  p.CustomReactHookInput_error_message__jq01z');
+        this.restorePasswordEmailInput = page.locator('form.RestorePasswordPopup_form__jS1V2 input');
+        this.restorePasswordCrossBtn = page.locator('div[data-testid="restorePasswordCross"]');
+        this.restorePasswordPopupError = page.locator('.RestorePasswordPopup_error__1cBok');
+
+        this.loginPopupLoginBtn = page.locator('.LoginForm_form__7G3Zk button.ItemButtons_darkBlueRoundBtn___4GDw');
+        this.loginPopup = page.locator('div[data-testid="loginPopup"]');
+        this.loginPopupEmailInputError = page.locator('form.LoginForm_form__7G3Zk > div:nth-child(1) p.CustomReactHookInput_error_message__jq01z');
+        this.loginPopupPasswordInputError = page.locator('form.LoginForm_form__7G3Zk > div:nth-child(2) p.CustomReactHookInput_error_message__jq01z');
+        this.loginPopupEmailInput = page.locator('#email');
+        this.loginPopupPasswordInput = page.locator('#password');
+        this.loginPopupPasswordInputEyeIcon = page.locator('div.CustomReactHookInput_icon__XAlK2');
+        this.loginPopupError = page.locator('div[data-testid="errorMessage"]');
+
+        this.navbarAvatarBlock = page.locator('div[data-testid="avatarBlock"]');
+        this.profileDropdownMenu = page.locator('div.ProfileDropdownMenu_container__kb2vM');
+        this.profileDropdownMenuEmail = page.locator('div[data-testid="email"]');
+        this.profileDropdownMenuLogout = page.locator('div[data-testid="logout"]');
+        this.profileDropdownMenuProfile = page.locator('div[data-testid="profile"]');
     }
 
     async navigate(): Promise<void> {
@@ -113,6 +162,48 @@ class HomePage extends BasePage {
         await this.page.waitForTimeout(1000);
     }
 
+    async clickNavbarAuthBtn(): Promise<void> {
+        await this.clickElement(this.navbarAuthBtn);
+    }
+
+    async clickForgotPasswordLink(): Promise<void> {
+        await this.clickElement(this.forgotPasswordLink);
+        await this.page.waitForTimeout(1500);
+    }
+
+    async clickRestorePasswordCaptchaContainer(): Promise<void> {
+        await this.clickElement(this.restorePasswordCaptchaContainer);
+    }
+
+    async clickRestorePasswordRestorePasswordBtn(): Promise<void> {
+        await this.clickElement(this.restorePasswordRestorePasswordBtn);
+    }
+
+    async clickRestorePasswordCrossBtn(): Promise<void> {
+        await this.clickElement(this.restorePasswordCrossBtn);
+    }
+
+    async clickLoginPopupLoginBtn(): Promise<void> {
+        await super.clickElement(this.loginPopupLoginBtn);
+    }
+
+    async clickLoginPopupPasswordInputEyeIcon(): Promise<void> {
+        await super.clickElement(this.loginPopupPasswordInputEyeIcon);
+    }
+
+    async clickNavbarAvatarBlock(): Promise<void> {
+        await super.clickElement(this.navbarAvatarBlock);
+    }
+
+    async clickProfileDropdownMenuLogout(): Promise<void> {
+        await super.clickElement(this.profileDropdownMenuLogout);
+    }
+
+    async clickProfileDropdownMenuProfile(): Promise<void> {
+        await super.clickElement(this.profileDropdownMenuProfile);
+        await this.page.waitForURL('https://stage.rentzila.com.ua/owner-cabinet/');
+    }
+
     async scrollToServicesSection(): Promise<void> {
         await this.scrollToElement(this.servicesSection);
     }
@@ -138,6 +229,18 @@ class HomePage extends BasePage {
         await this.page.waitForTimeout(1000);
     }
 
+    async setValueInRestorePasswordEmailField(email: string): Promise<void> {
+        await this.setValueInField(email, this.restorePasswordEmailInput);
+    }
+
+    async setValueInLoginPopupEmailInput(email: string): Promise<void> {
+        await this.setValueInField(email, this.loginPopupEmailInput);
+    }
+
+    async setValueInLoginPopupPasswordInput(password: string): Promise<void> {
+        await this.setValueInField(password, this.loginPopupPasswordInput);
+    }
+
     async clearNameField(): Promise<void> {
         await this.setValueInField('', this.consultationNameInput);
     }
@@ -157,6 +260,21 @@ class HomePage extends BasePage {
 
     async pressEnterKeyForSearchInput(){
         await this.pressKey('Enter', this.navbarSearchInput);
+        await this.page.waitForTimeout(1000);
+    }
+
+    async pressEnterKeyForRestorePasswordEmailInput(){
+        await super.pressKey('Enter', this.restorePasswordEmailInput);
+        await this.page.waitForTimeout(1000);
+    }
+
+    async pressEnterKeyForLoginPopupPasswordInput(){
+        await super.pressKey('Enter', this.loginPopupPasswordInput);
+        await this.page.waitForTimeout(1000);
+    }
+
+    async pressEnterKeyForLoginPopupEmailInput(){
+        await super.pressKey('Enter', this.loginPopupEmailInput);
         await this.page.waitForTimeout(1000);
     }
     

@@ -32,6 +32,11 @@ class BasePage {
         return text || '';
     }
 
+    async getValueOfElementWithoutSpaces(element: Locator): Promise<string> {
+        const value = await element.inputValue();
+        return value.replace(/\s/g, '');
+    }
+
     async hoverElement(element: Locator): Promise<void>{
         await element.hover();
     }
